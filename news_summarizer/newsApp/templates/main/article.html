@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.3/cyborg/bootstrap.min.css"
+      integrity="sha512-QzwqVdCfEIUhmovYlJ/ET11Uh4MLuvEpwVpTVTRhChwzgfkrQH9BMcDvgwFpi5fMUGVLJAPsEXJVHuODuhmctg=="
+      crossorigin="anonymous"
+    />
+    <title>Article Detail</title>
+  </head>
+  <body>
+    <div class="container">
+      {% if error %}
+      <div class="alert alert-danger">{{ error }}</div>
+      {% else %}
+      <div class="card mt-4">
+        <img src="{{ top_image }}" class="card-img-top" alt="News Image" />
+        <div class="card-body">
+          <h2 class="card-title">{{ title }}</h2>
+          <p class="card-text"><strong>Authors:</strong> {{ authors }}</p>
+          <p class="card-text">
+            <strong>Published on:</strong> {{ publish_date }}
+          </p>
+          <p class="card-text"><strong>Summary:</strong> {{ summary }}</p>
+          <p class="card-text"><strong>Sentiment:</strong> {{ sentiment }}</p>
+          <p class="card-text">
+            <strong><a href="{{ url }}">Original Article</a></strong>
+          </p>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
